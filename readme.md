@@ -21,7 +21,7 @@
 - Ter o [NodeJs](nodejs.org) instalado na sua maquina
 - Ter o [MySql](https://www.mysql.com/downloads/) instalado na sua maquina
 
-## ## Como utilizar
+## Como utilizar
 
 - Faça o clone desse repositório
 - Abra o projeto em algum editor de código de sua preferência
