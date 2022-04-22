@@ -26,9 +26,9 @@
 - Faça o clone desse repositório
 - Abra o projeto em algum editor de código de sua preferência
 - No terminal do editor:
-  - Execute o comando `yarn ` para baixar todas as dependências do projeto
+  - Execute o comando `yarn` para baixar todas as dependências do projeto
 - Renomeie o arquivo`.env-example` para `.env`
-- Após isso utilize o padrão de URL do prisma descrito no (Site Oficial) para alterar a variável DATABASE_URL dentro do arquivo `.env`
+- Após isso, utilize o padrão de URL do prisma descrito no [Site Oficial](https://www.prisma.io/docs/concepts/database-connectors/mysql#connection-url) para alterar a variável DATABASE_URL dentro do arquivo `.env`
 
 ## TaskRunners
 
