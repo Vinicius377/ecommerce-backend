@@ -2,17 +2,25 @@ import { Request, Response } from "express";
 import prismaClient from "../database/prismaClient";
 
 export default class GetProduct {
-  public async handler(req: Request, res: Response) {
+  public handler(req: Request, res: Response) {
     const { id } = req.params;
+    const resultQuery = this.dbGetQuery(id);
+    if (resultQuery) {
+      res.json(resultQuery);
+    } else {
+      res.json({ message: "error" });
+    }
+  }
+  private async dbGetQuery(id: string) {
     if (id) {
       const data = await prismaClient.products.findUnique({
         where: {
           id: Number(id),
         },
       });
-      res.json(data);
+      return data;
     } else {
-      res.json({ message: "the product with this id does exist" });
+      return undefined;
     }
   }
 }
