@@ -16,5 +16,7 @@ model products{
     urlFile String @unique  @db.Char(255)
     price Float 
     score Int 
+    updatedAt DateTime @default(now())
     name String @db.Char(255)
+    description String  @db.Char(255) @default("")
 }

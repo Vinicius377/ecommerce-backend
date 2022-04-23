@@ -3,21 +3,26 @@ import prismaClient from "../database/prismaClient";
 
 export default class PostProduct {
   public async handler(req: Request, res: Response) {
-    const { name, price, score } = req.body;
-
+    const { name, price, score, description } = req.body;
     const filePath = req.file?.path;
+
     if (name && price && filePath && score) {
-      await prismaClient.products.create({
-        data: {
-          name,
-          price: Number(price),
-          score: Number(score),
-          urlFile: filePath,
-        },
-      });
-      res.json({ message: "sucess in post product" });
+      try {
+        await prismaClient.products.create({
+          data: {
+            name,
+            price: Number(price),
+            score: Number(score),
+            urlFile: filePath,
+            description,
+          },
+        });
+        res.status(200).json({ message: "product created" });
+      } catch (e) {
+        throw new Error("it was not possible create a product");
+      }
     } else {
-      res.json({ message: "error in post product" });
+      throw new Error("insufficient information");
     }
   }
 }

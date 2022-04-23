@@ -10,11 +10,13 @@
 
 ## Features
 
-- [x] PostProducts
-- [x] GetProduct
-- [ ] GetAllProducts
-- [ ] CreateUser
-- [ ] LoginUser
+- [x] Adicionar um produto novo no BD
+- [x] Buscar um produto especifico no BD
+- [ ] Buscar uma lista de produtos no BD
+- [ ] Deletar produto no BD
+- [ ] Atualizar informações de um produto especifico no BD
+- [ ] Criar uma nova conta de usuário
+- [ ] Sistema de login com jwt
 
 ## Requisitos minimos
 
